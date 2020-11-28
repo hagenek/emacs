@@ -78,6 +78,14 @@
 ;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ;; The above is the default in recent emacsen
 
+(require 'geiser)
+
+(setq geiser-active-implementations '(mit))
+
+(defun geiser-save ()
+  (interactive)
+  (geiser-repl--write-input-ring))
+
 ;; The packages you want installed. You can also install these
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
@@ -97,8 +105,6 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
-    
-
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -117,6 +123,9 @@
 
     ;; edit html tags like sexps
     tagedit
+
+    ;; Collection of modes to do Scheme programming in emacs
+    geiser
 
     ;; git integration
     magit))
@@ -200,13 +209,13 @@
    '("1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" default))
  '(fci-rule-color "#393939")
  '(package-selected-packages
-   '(highlight-parentheses compilation-recenter-end magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
+   '(geiser nov highlight-parentheses compilation-recenter-end magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(variable-pitch ((t (:height 1.5 :family "Georgia")))))
 
 (defvar safe-skx-org-eval-startblock (list (concat (getenv "HOME") "/Repos/git.steve.fi/") (concat (getenv "HOME") "/Repos/git.steve.org.uk/") (concat (getenv "HOME") "/Org") (concat (getenv "HOME") "/WorkLogs") )
  "A list of filename patterns which will have their contents evaluated with no prompting.")
