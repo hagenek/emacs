@@ -20,7 +20,14 @@
           (set-visited-file-name new-name)
           (set-buffer-modified-p nil))))))
 
+;; Settings for Line numbers on the side
+(require 'linum)
+(set-face-attribute 'linum nil :foreground (face-attribute 'default :foreground))
+(setq-default linum-format "%d ")
 
+(set-face-attribute 'linum nil :foreground #fff)
+
+;; Wish I rememberd why I need this...
 (add-to-list 'exec-path "/Users/georg/path")
 
 ;; Define package repositories
@@ -209,7 +216,7 @@
    '("1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" default))
  '(fci-rule-color "#393939")
  '(package-selected-packages
-   '(geiser nov highlight-parentheses compilation-recenter-end magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
+   '(ivy geiser nov highlight-parentheses compilation-recenter-end magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
