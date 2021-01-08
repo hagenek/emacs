@@ -28,6 +28,11 @@
 (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'tomorrow-night-bright t)
 
+;; Settings for Line numbers on the side
+(global-linum-mode)
+(set-face-attribute 'linum nil :foreground (face-attribute 'default :foreground))
+(setq-default linum-format "%d ")
+
 ;; increase font size for better readability
 (set-face-attribute 'default nil :height 140)
 

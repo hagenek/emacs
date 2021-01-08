@@ -4,6 +4,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
 ;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
@@ -22,10 +26,10 @@
 
 ;; Settings for Line numbers on the side
 (require 'linum)
-(set-face-attribute 'linum nil :foreground (face-attribute 'default :foreground))
+(set-face-attribute 'linum nil :foreground "#ffffff")
 (setq-default linum-format "%d ")
 
-(set-face-attribute 'linum nil :foreground #fff)
+;; (set-face-attribute 'linum nil :foreground "#fff")
 
 ;; Wish I rememberd why I need this...
 (add-to-list 'exec-path "/Users/georg/path")
@@ -161,7 +165,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
